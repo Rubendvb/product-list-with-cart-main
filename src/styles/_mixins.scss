@@ -1,0 +1,29 @@
+@use './variables' as *;
+
+@mixin Text-Preset-40 {
+  font-size: 4rem;
+  line-height: 120%;
+  letter-spacing: 0;
+  font-weight: 700;
+}
+
+@mixin Text-Preset-24 {
+  font-size: 2.4rem;
+  line-height: 125%;
+  letter-spacing: 0;
+  font-weight: 700;
+}
+
+@mixin Text-Preset-16 {
+  font-size: 1.6rem;
+  line-height: 150%;
+  letter-spacing: 0;
+  font-weight: 600;
+}
+
+@mixin Text-Preset-14($font-weight: 400) {
+  font-size: 1.4rem;
+  line-height: 150%;
+  letter-spacing: 0;
+  font-weight: $font-weight;
+}
