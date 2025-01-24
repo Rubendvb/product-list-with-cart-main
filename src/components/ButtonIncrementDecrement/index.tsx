@@ -18,7 +18,7 @@ export function ButtonIncrementDecrement({ type }: ButtonProps) {
           fill="none"
           viewBox="0 0 10 2"
         >
-          <path fill="#fff" d="M0 .375h10v1.25H0z"></path>
+          <path fill="currentColor" d="M0 .375h10v1.25H0z"></path>
         </svg>
       ) : (
         <svg
@@ -29,7 +29,7 @@ export function ButtonIncrementDecrement({ type }: ButtonProps) {
           viewBox="0 0 10 10"
         >
           <path
-            fill="#fff"
+            fill="currentColor"
             d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10z"
           ></path>
         </svg>

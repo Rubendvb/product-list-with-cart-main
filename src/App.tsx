@@ -1,8 +1,11 @@
+import { useState } from 'react'
 import './App.scss'
 
 import { ButtonAddToCart } from './components/ButtonAddToCart'
 
 function App() {
+  const [items, setItems] = useState(1)
+
   return (
     <>
       <div className="page">
@@ -37,9 +40,9 @@ function App() {
                   src="/public/assets/images/image-creme-brulee-desktop.jpg"
                   alt="Crème Brûlée"
                 />
-                <button className="dessert__add-to-cart-button">
-                  Add to Cart
-                </button>
+                <div className="container__button">
+                  <ButtonAddToCart />
+                </div>
               </div>
               <div className="dessert__details">
                 <span className="dessert__type">Crème Brûlée</span>
@@ -55,9 +58,10 @@ function App() {
                   src="/public/assets/images/image-creme-brulee-desktop.jpg"
                   alt="Macaron"
                 />
-                <button className="dessert__add-to-cart-button">
-                  Add to Cart
-                </button>
+
+                <div className="container__button">
+                  <ButtonAddToCart />
+                </div>
               </div>
               <div className="dessert__details">
                 <span className="dessert__type">Macaron</span>
@@ -73,9 +77,10 @@ function App() {
                   src="/public/assets/images/image-creme-brulee-desktop.jpg"
                   alt="Tiramisu"
                 />
-                <button className="dessert__add-to-cart-button">
-                  Add to Cart
-                </button>
+
+                <div className="container__button">
+                  <ButtonAddToCart />
+                </div>
               </div>
               <div className="dessert__details">
                 <span className="dessert__type">Tiramisu</span>
@@ -91,9 +96,10 @@ function App() {
                   src="/public/assets/images/image-creme-brulee-desktop.jpg"
                   alt="Baklava"
                 />
-                <button className="dessert__add-to-cart-button">
-                  Add to Cart
-                </button>
+
+                <div className="container__button">
+                  <ButtonAddToCart />
+                </div>
               </div>
               <div className="dessert__details">
                 <span className="dessert__type">Baklava</span>
@@ -110,9 +116,10 @@ function App() {
                   src="/public/assets/images/image-creme-brulee-desktop.jpg"
                   alt="Lemon Pie"
                 />
-                <button className="dessert__add-to-cart-button">
-                  Add to Cart
-                </button>
+
+                <div className="container__button">
+                  <ButtonAddToCart />
+                </div>
               </div>
               <div className="dessert__details">
                 <span className="dessert__type">Pie</span>
@@ -129,9 +136,10 @@ function App() {
                   src="/public/assets/images/image-creme-brulee-desktop.jpg"
                   alt="Red Velvet Cake"
                 />
-                <button className="dessert__add-to-cart-button">
-                  Add to Cart
-                </button>
+
+                <div className="container__button">
+                  <ButtonAddToCart />
+                </div>
               </div>
               <div className="dessert__details">
                 <span className="dessert__type">Cake</span>
@@ -147,9 +155,10 @@ function App() {
                   src="/public/assets/images/image-creme-brulee-desktop.jpg"
                   alt="Brownie"
                 />
-                <button className="dessert__add-to-cart-button">
-                  Add to Cart
-                </button>
+
+                <div className="container__button">
+                  <ButtonAddToCart />
+                </div>
               </div>
               <div className="dessert__details">
                 <span className="dessert__type">Brownie</span>
@@ -165,9 +174,10 @@ function App() {
                   src="/public/assets/images/image-creme-brulee-desktop.jpg"
                   alt="Panna Cotta"
                 />
-                <button className="dessert__add-to-cart-button">
-                  Add to Cart
-                </button>
+
+                <div className="container__button">
+                  <ButtonAddToCart />
+                </div>
               </div>
               <div className="dessert__details">
                 <span className="dessert__type">Panna Cotta</span>
@@ -179,54 +189,53 @@ function App() {
         </main>
 
         <aside className="cart">
-          <h2 className="cart__title">Your Cart {/* Quantity -->) */}</h2>
+          <h2 className="cart__title">Your Cart ({items})</h2>
 
-          <div className="cart__empty-message">
-            <img className="cart__empty-image" src="" alt="Empty Cart" />
-            <p className="cart__empty-text">
-              Your added items will appear here
-            </p>
-          </div>
-
-          <div className="cart__items">
-            <ul className="cart__list">
-              <li className="cart__item">
-                <div className="cart__item-details">
-                  <span className="cart__item-type">Classic</span>
-                  <div className="cart__item-info">
-                    <span className="cart__item-quantity">1x</span>
-                    <span className="cart__item-unit-price">@ $5.50</span>
-                    <span className="cart__item-total-price">$5.50</span>
+          {items === 0 ? (
+            <div className="cart__empty-message">
+              <img
+                className="cart__empty-image"
+                src="/public/assets/images/illustration-empty-cart.svg"
+                alt="Empty Cart"
+              />
+              <p className="cart__empty-text">
+                Your added items will appear here
+              </p>
+            </div>
+          ) : (
+            <div className="cart__items">
+              <ul className="cart__list">
+                <li className="cart__item">
+                  <div className="cart__item-details">
+                    <span className="cart__item-type">Classic</span>
+                    <div className="cart__item-info">
+                      <span className="cart__item-quantity">1x</span>
+                      <span className="cart__item-unit-price">@ $5.50</span>
+                      <span className="cart__item-total-price">$5.50</span>
+                    </div>
                   </div>
-                </div>
-                <div className="cart__item-image">
-                  <img
-                    className="cart__item-image-element"
-                    src=""
-                    alt="Classic Item"
-                  />
-                </div>
-              </li>
-
-              <li className="cart__item">
-                <div className="cart__item-details">
-                  <span className="cart__item-type">Vanilla</span>
-                  <div className="cart__item-info">
-                    <span className="cart__item-quantity">4x</span>
-                    <span className="cart__item-unit-price">@ $7.00</span>
-                    <span className="cart__item-total-price">$28.00</span>
+                  <div className="cart__item-image">
+                    <img
+                      className="cart__item-image-element"
+                      src=""
+                      alt="Classic Item"
+                    />
                   </div>
-                </div>
-                <div className="cart__item-image">
-                  <img
-                    className="cart__item-image-element"
-                    src="/public/assets/images/illustration-empty-cart.svg"
-                    alt="Vanilla Item"
-                  />
-                </div>
-              </li>
-            </ul>
-          </div>
+                </li>
+
+                <li className="cart__item">
+                  <div className="cart__item-details">
+                    <span className="cart__item-type">Vanilla</span>
+                    <div className="cart__item-info">
+                      <span className="cart__item-quantity">4x</span>
+                      <span className="cart__item-unit-price">@ $7.00</span>
+                      <span className="cart__item-total-price">$28.00</span>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          )}
         </aside>
       </div>
 
