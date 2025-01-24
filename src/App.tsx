@@ -1,160 +1,228 @@
-import './App.css'
+import './App.scss'
+
+import { ButtonAddToCart } from './components/ButtonAddToCart'
 
 function App() {
   return (
     <>
-      <div>
-        <main>
-          <h1>Desserts</h1>
+      <div className="page">
+        <main className="main">
+          <h1 className="main__title">Desserts</h1>
 
-          <div>
-            <article>
-              <div>
-                <img src="" alt="" />
-                <button>Add to Cart</button>
+          <div className="desserts">
+            <article className="dessert">
+              <div className="dessert__image-container">
+                <img
+                  className="dessert__image"
+                  src="/public/assets/images/image-waffle-desktop.jpg"
+                  alt="Waffle"
+                />
+
+                <div className="container__button">
+                  <ButtonAddToCart />
+                </div>
               </div>
-              <div>
-                <span>Waffle</span>
-                <h3>Waffle with Berries</h3>
-                <span>6.50</span>
+
+              <div className="dessert__details">
+                <span className="dessert__type">Waffle</span>
+                <h3 className="dessert__name">Waffle with Berries</h3>
+                <span className="dessert__price">$6.50</span>
               </div>
             </article>
 
-            <article>
-              <div>
-                <img src="" alt="" />
-                <button>Add to Cart</button>
+            <article className="dessert">
+              <div className="dessert__image-container">
+                <img
+                  className="dessert__image"
+                  src="/public/assets/images/image-creme-brulee-desktop.jpg"
+                  alt="Crème Brûlée"
+                />
+                <button className="dessert__add-to-cart-button">
+                  Add to Cart
+                </button>
               </div>
-              <div>
-                <span>Crème Brûlée</span>
-                <h3>Vanilla Bean Crème Brûlée</h3>
-                <span>7.00</span>
-              </div>
-            </article>
-
-            <article>
-              <div>
-                <img src="" alt="" />
-                <button>Add to Cart</button>
-              </div>
-              <div>
-                <span>Macaron</span>
-                <h3>Macaron Mix of Five</h3>
-                <span>8.00</span>
+              <div className="dessert__details">
+                <span className="dessert__type">Crème Brûlée</span>
+                <h3 className="dessert__name">Vanilla Bean Crème Brûlée</h3>
+                <span className="dessert__price">$7.00</span>
               </div>
             </article>
 
-            <article>
-              <div>
-                <img src="" alt="" />
-                <button>Add to Cart</button>
+            <article className="dessert">
+              <div className="dessert__image-container">
+                <img
+                  className="dessert__image"
+                  src="/public/assets/images/image-creme-brulee-desktop.jpg"
+                  alt="Macaron"
+                />
+                <button className="dessert__add-to-cart-button">
+                  Add to Cart
+                </button>
               </div>
-              <div>
-                <span>Tiramisu</span>
-                <h3>Classic Tiramisu</h3>
-                <span>5.50</span>
-              </div>
-            </article>
-
-            <article>
-              <div>
-                <img src="" alt="" />
-                <button>Add to Cart</button>
-              </div>
-              <div>
-                <span>Baklava</span>
-                <h3>Pistachio Baklava</h3>
-                <span>4.00</span>
+              <div className="dessert__details">
+                <span className="dessert__type">Macaron</span>
+                <h3 className="dessert__name">Macaron Mix of Five</h3>
+                <span className="dessert__price">$8.00</span>
               </div>
             </article>
 
-            <article>
-              Lemon
-              <div>
-                <img src="" alt="" />
-                <button>Add to Cart</button>
+            <article className="dessert">
+              <div className="dessert__image-container">
+                <img
+                  className="dessert__image"
+                  src="/public/assets/images/image-creme-brulee-desktop.jpg"
+                  alt="Tiramisu"
+                />
+                <button className="dessert__add-to-cart-button">
+                  Add to Cart
+                </button>
               </div>
-              <div>
-                <span>Pie</span>
-                <h3>Meringue Pie</h3>
-                <span>5.00</span>
-              </div>
-            </article>
-
-            <article>
-              Red
-              <div>
-                <img src="" alt="" />
-                <button>Add to Cart</button>
-              </div>
-              <div>
-                <span>Cake</span>
-                <h3>Velvet Cake</h3>
-                <span>4.50</span>
+              <div className="dessert__details">
+                <span className="dessert__type">Tiramisu</span>
+                <h3 className="dessert__name">Classic Tiramisu</h3>
+                <span className="dessert__price">$5.50</span>
               </div>
             </article>
 
-            <article>
-              <div>
-                <img src="" alt="" />
-                <button>Add to Cart</button>
+            <article className="dessert">
+              <div className="dessert__image-container">
+                <img
+                  className="dessert__image"
+                  src="/public/assets/images/image-creme-brulee-desktop.jpg"
+                  alt="Baklava"
+                />
+                <button className="dessert__add-to-cart-button">
+                  Add to Cart
+                </button>
               </div>
-              <div>
-                <span>Brownie</span>
-                <h3>Salted Caramel Brownie</h3>
-                <span>4.50</span>
+              <div className="dessert__details">
+                <span className="dessert__type">Baklava</span>
+                <h3 className="dessert__name">Pistachio Baklava</h3>
+                <span className="dessert__price">$4.00</span>
               </div>
             </article>
 
-            <article>
-              <div>
-                <img src="" alt="" />
-                <button>Add to Cart</button>
+            <article className="dessert">
+              <div className="dessert__type-label">Lemon</div>
+              <div className="dessert__image-container">
+                <img
+                  className="dessert__image"
+                  src="/public/assets/images/image-creme-brulee-desktop.jpg"
+                  alt="Lemon Pie"
+                />
+                <button className="dessert__add-to-cart-button">
+                  Add to Cart
+                </button>
               </div>
-              <div>
-                <span>Panna Cotta</span>
-                <h3>Vanilla Panna Cotta</h3>
-                <span>6.50</span>
+              <div className="dessert__details">
+                <span className="dessert__type">Pie</span>
+                <h3 className="dessert__name">Meringue Pie</h3>
+                <span className="dessert__price">$5.00</span>
+              </div>
+            </article>
+
+            <article className="dessert">
+              <div className="dessert__type-label">Red</div>
+              <div className="dessert__image-container">
+                <img
+                  className="dessert__image"
+                  src="/public/assets/images/image-creme-brulee-desktop.jpg"
+                  alt="Red Velvet Cake"
+                />
+                <button className="dessert__add-to-cart-button">
+                  Add to Cart
+                </button>
+              </div>
+              <div className="dessert__details">
+                <span className="dessert__type">Cake</span>
+                <h3 className="dessert__name">Velvet Cake</h3>
+                <span className="dessert__price">$4.50</span>
+              </div>
+            </article>
+
+            <article className="dessert">
+              <div className="dessert__image-container">
+                <img
+                  className="dessert__image"
+                  src="/public/assets/images/image-creme-brulee-desktop.jpg"
+                  alt="Brownie"
+                />
+                <button className="dessert__add-to-cart-button">
+                  Add to Cart
+                </button>
+              </div>
+              <div className="dessert__details">
+                <span className="dessert__type">Brownie</span>
+                <h3 className="dessert__name">Salted Caramel Brownie</h3>
+                <span className="dessert__price">$4.50</span>
+              </div>
+            </article>
+
+            <article className="dessert">
+              <div className="dessert__image-container">
+                <img
+                  className="dessert__image"
+                  src="/public/assets/images/image-creme-brulee-desktop.jpg"
+                  alt="Panna Cotta"
+                />
+                <button className="dessert__add-to-cart-button">
+                  Add to Cart
+                </button>
+              </div>
+              <div className="dessert__details">
+                <span className="dessert__type">Panna Cotta</span>
+                <h3 className="dessert__name">Vanilla Panna Cotta</h3>
+                <span className="dessert__price">$6.50</span>
               </div>
             </article>
           </div>
         </main>
 
-        <aside>
-          <h2>Your Cart {/* Quantity -->) */}</h2>
+        <aside className="cart">
+          <h2 className="cart__title">Your Cart {/* Quantity -->) */}</h2>
 
-          <div>
-            <img src="" alt="" />
-            <p>Your added items will appear here</p>
+          <div className="cart__empty-message">
+            <img className="cart__empty-image" src="" alt="Empty Cart" />
+            <p className="cart__empty-text">
+              Your added items will appear here
+            </p>
           </div>
 
-          <div>
-            <ul>
-              <li>
-                <div>
-                  <span>Classic</span>
-                  <div>
-                    <span>1x</span>
-                    <span>@ $5.50</span>
-                    <span>$5.50</span>
+          <div className="cart__items">
+            <ul className="cart__list">
+              <li className="cart__item">
+                <div className="cart__item-details">
+                  <span className="cart__item-type">Classic</span>
+                  <div className="cart__item-info">
+                    <span className="cart__item-quantity">1x</span>
+                    <span className="cart__item-unit-price">@ $5.50</span>
+                    <span className="cart__item-total-price">$5.50</span>
                   </div>
                 </div>
-                <div>
-                  <img src="" alt="" />
+                <div className="cart__item-image">
+                  <img
+                    className="cart__item-image-element"
+                    src=""
+                    alt="Classic Item"
+                  />
                 </div>
               </li>
 
-              <li>
-                <div>
-                  <span>Vanilla</span>
-                  <div>
-                    <span>4x</span>
-                    <span>@ $7.00</span>
-                    <span>$28.00</span>
+              <li className="cart__item">
+                <div className="cart__item-details">
+                  <span className="cart__item-type">Vanilla</span>
+                  <div className="cart__item-info">
+                    <span className="cart__item-quantity">4x</span>
+                    <span className="cart__item-unit-price">@ $7.00</span>
+                    <span className="cart__item-total-price">$28.00</span>
                   </div>
                 </div>
-                <div>
-                  <img src="" alt="Vanilla Item" />
+                <div className="cart__item-image">
+                  <img
+                    className="cart__item-image-element"
+                    src="/public/assets/images/illustration-empty-cart.svg"
+                    alt="Vanilla Item"
+                  />
                 </div>
               </li>
             </ul>

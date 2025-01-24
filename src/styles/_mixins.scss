@@ -1,29 +1,33 @@
 @use './variables' as *;
 
-@mixin Text-Preset-40 {
+@mixin Text-Preset-1($color: $Rose-900) {
   font-size: 4rem;
   line-height: 120%;
   letter-spacing: 0;
   font-weight: 700;
+  color: $color;
 }
 
-@mixin Text-Preset-24 {
+@mixin Text-Preset-2($color: $Rose-900) {
   font-size: 2.4rem;
   line-height: 125%;
   letter-spacing: 0;
   font-weight: 700;
+  color: $color;
 }
 
-@mixin Text-Preset-16 {
+@mixin Text-Preset-3($color: $Rose-900) {
   font-size: 1.6rem;
   line-height: 150%;
   letter-spacing: 0;
   font-weight: 600;
+  color: $color;
 }
 
-@mixin Text-Preset-14($font-weight: 400) {
+@mixin Text-Preset-4($font-weight, $color: $Rose-900) {
   font-size: 1.4rem;
   line-height: 150%;
   letter-spacing: 0;
-  font-weight: $font-weight;
+  font-weight: if($font-weight == bold, 600, 400);
+  color: $color;
 }

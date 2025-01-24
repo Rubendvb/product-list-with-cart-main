@@ -1,0 +1,95 @@
+@font-face {
+  font-family: 'Red Hat Text';
+  src: url('/assets/fonts/static/RedHatText-Regular.ttf') format('truetype'),
+    url('/assets/fonts/static/RedHatText-Italic-VariableFont_wght.ttf')
+      format('truetype'),
+    url('/assets/fonts/static/RedHatText-VariableFont_wght.ttf')
+      format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Isso garante que o texto seja renderizado com uma fonte de fallback enquanto a fonte personalizada está sendo carregada */
+}
+
+@font-face {
+  font-family: 'Red Hat Text';
+  src: url('/assets/fonts/static/RedHatText-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Red Hat Text';
+  src: url('/assets/fonts/static/RedHatText-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  font-family: 'Red Hat Text';
+  line-height: 1.5;
+  font-weight: 400;
+  background-color: #fcf9f7;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  min-width: 0;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+img,
+video,
+svg {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100dvh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* @media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+} */
