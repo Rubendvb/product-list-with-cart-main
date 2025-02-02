@@ -37,17 +37,20 @@
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
-  margin-bottom: 2.4rem;
+  margin-bottom: $spacing-24;
 
   .cart__item {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-bottom: 1.6rem;
+    padding-bottom: $spacing-16;
     border-bottom: 1px solid $Rose-100;
 
     &-image {
-      max-width: 4.8rem;
+      height: 4.8rem;
+      width: 4.8rem;
+      object-fit: cover;
+      border-radius: 0.4rem;
     }
 
     &-type {
@@ -123,19 +126,25 @@
 
 .confirmation-modal {
   position: fixed;
-  right: 0;
+  width: 100%;
+  height: 100vh;
   left: 0;
-  bottom: 0;
-  background-color: $White;
-  z-index: 10;
-  // height: 100%;
-  padding: 4rem 2.4rem 2.4rem;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &__container {
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    justify-content: center;
+    background-color: $White;
+    width: 100%;
+    border-radius: $spacing-12 $spacing-12 0 0;
+    align-self: flex-end;
+    padding: $spacing-40 $spacing-24 $spacing-24;
+  }
+
+  &__icon {
+    margin-bottom: $spacing-24;
   }
 
   &__title {
@@ -150,6 +159,7 @@
 
   &__card {
     width: 100%;
+    margin: $spacing-32 0 $spacing-32;
 
     & .cart__items .cart__list .cart__item {
       & > div:first-child {

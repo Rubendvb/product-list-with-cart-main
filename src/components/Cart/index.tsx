@@ -66,9 +66,7 @@ export default function Cart() {
               src="/public/assets/images/icon-order-confirmed.svg"
               alt=""
             />
-
             <h3 className="confirmation-modal__title">Order Confirmed</h3>
-
             <span className="confirmation-modal__text">
               We hope you enjoy your food!
             </span>
