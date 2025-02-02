@@ -2,6 +2,8 @@
 @use './styles/mixins' as *;
 
 .page {
+  max-width: 124rem;
+  margin: 0 auto;
   padding: $spacing-24;
 
   @media screen and (min-width: 1024px) {

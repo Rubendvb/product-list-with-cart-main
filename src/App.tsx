@@ -1,12 +1,11 @@
 import { useEffect, useMemo, useState } from 'react'
 
-import { ButtonAddToCart } from './components/ButtonAddToCart'
-
 import './App.scss'
 
 import data from './data/data.json'
+import Dessert from './components/Dessert'
 
-type Dessert = {
+export type IDessert = {
   image: {
     thumbnail: string
     mobile: string
@@ -18,42 +17,18 @@ type Dessert = {
   price: number
 }
 
-type IDesserts = Dessert[]
+type IDesserts = IDessert[]
 
 function App() {
   const [items, setItems] = useState<IDesserts>([])
+  const [itemsCart, setItemsCart] = useState([])
 
   useEffect(() => {
     setItems(data)
   }, [])
 
   const renderedItems = useMemo(
-    () =>
-      items.map((item, index) => (
-        <article key={index} className="dessert">
-          <div className="dessert__image-container">
-            <picture>
-              <source media="(min-width: 1024px)" srcSet={item.image.desktop} />
-              <source media="(min-width: 768px)" srcSet={item.image.tablet} />
-              <img
-                className="dessert__image"
-                src={item.image.mobile}
-                alt={item.name}
-              />
-            </picture>
-
-            <div className="container__button">
-              <ButtonAddToCart />
-            </div>
-          </div>
-
-          <div className="dessert__details">
-            <span className="dessert__type">{item.category}</span>
-            <h3 className="dessert__name">{item.name}</h3>
-            <span className="dessert__price">${item.price.toFixed(2)}</span>
-          </div>
-        </article>
-      )),
+    () => items.map((item, index) => <Dessert key={index} item={item} />),
     [items]
   )
 
@@ -67,9 +42,9 @@ function App() {
         </main>
 
         <aside className="cart">
-          <h2 className="cart__title">Your Cart ({items.length})</h2>
+          <h2 className="cart__title">Your Cart ({itemsCart.length})</h2>
 
-          {items.length === 0 ? (
+          {itemsCart.length === 0 ? (
             <div className="cart__empty-message">
               <img
                 className="cart__empty-image"
