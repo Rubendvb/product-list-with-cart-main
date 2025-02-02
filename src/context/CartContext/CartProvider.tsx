@@ -1,17 +1,10 @@
-import { createContext, ReactNode, useContext, useState } from 'react'
+import { ReactNode, useState } from 'react'
 import { IDessert } from '../../App'
+import { CartContext } from './CartContext'
 
-interface CartItem extends IDessert {
+export interface CartItem extends IDessert {
   quantity: number
 }
-
-interface CartContextType {
-  cart: CartItem[]
-  addToCart: (item: IDessert) => void
-  updateQuantity: (name: string, amount: number) => void
-}
-
-const CartContext = createContext<CartContextType | undefined>(undefined)
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [cart, setCart] = useState<CartItem[]>([])
@@ -49,14 +42,4 @@ export function CartProvider({ children }: { children: ReactNode }) {
       {children}
     </CartContext.Provider>
   )
-}
-
-export function useCart() {
-  const context = useContext(CartContext)
-
-  if (!context) {
-    throw new Error('useCart must be used within a CartProvider')
-  }
-
-  return context
 }

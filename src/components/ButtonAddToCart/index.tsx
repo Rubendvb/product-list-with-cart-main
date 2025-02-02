@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import { ButtonIncrementDecrement } from '../ButtonIncrementDecrement'
 
-import { useCart } from '../../context/CartContext'
+import { useCart } from '../../context/CartContext/useCart'
 
 import { IDessert } from '../../App'
 
