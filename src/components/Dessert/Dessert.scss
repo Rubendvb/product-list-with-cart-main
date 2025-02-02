@@ -1,0 +1,60 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.desserts {
+  display: grid;
+  row-gap: $spacing-24;
+
+  @media screen and (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2.4rem;
+    row-gap: 3.2rem;
+  }
+
+  .dessert {
+    display: grid;
+    row-gap: $spacing-32 + 0.6rem;
+
+    &__image-container {
+      position: relative;
+    }
+
+    &__image {
+      width: 100%;
+      max-height: 21.2rem;
+      object-fit: cover;
+      border-radius: 0.8rem;
+    }
+
+    .container__button {
+      position: absolute;
+      width: 16rem;
+      height: 4.4rem;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 50%);
+    }
+
+    &__details {
+      display: grid;
+      gap: $spacing-4;
+    }
+
+    &__type {
+      @include Text-Preset-4(regular, $Rose-500);
+    }
+
+    &__name {
+      @include Text-Preset-3;
+    }
+
+    &__price {
+      @include Text-Preset-3($Red);
+    }
+  }
+}

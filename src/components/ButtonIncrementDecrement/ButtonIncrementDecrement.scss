@@ -1,0 +1,22 @@
+@use '../../styles/variables' as *;
+
+.button-increment-decrement {
+  all: unset;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  height: 1.6rem;
+  width: 1.6rem;
+  color: #fff;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #fff;
+
+    svg path {
+      fill: $Red;
+    }
+  }
+}

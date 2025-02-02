@@ -1,0 +1,33 @@
+@use './styles/variables' as *;
+@use './styles/mixins' as *;
+
+.page {
+  max-width: 124rem;
+  margin: 0 auto;
+  padding: $spacing-24;
+
+  @media screen and (min-width: 1024px) {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 3.2rem;
+  }
+
+  .main {
+    margin-bottom: $spacing-32;
+
+    &__title {
+      @include Text-Preset-1;
+      margin-bottom: $spacing-32;
+    }
+  }
+}
+
+.footer {
+  text-align: center;
+  padding: 1.6rem;
+  @include Text-Preset-4(regular);
+
+  &__link {
+    color: $Red;
+  }
+}

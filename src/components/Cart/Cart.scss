@@ -1,0 +1,177 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.cart {
+  background-color: $White;
+  border-radius: $spacing-12;
+  padding: $spacing-24;
+
+  @media screen and (min-width: 1024px) {
+    align-self: flex-start;
+  }
+
+  &__title {
+    @include Text-Preset-2($Red);
+    margin-bottom: $spacing-24;
+  }
+
+  &__empty {
+    &-message {
+      text-align: center;
+    }
+
+    &-image {
+      width: 100%;
+      max-width: 12.8rem;
+      margin: 0 auto $spacing-16;
+    }
+
+    &-text {
+      @include Text-Preset-4(bold, $Rose-500);
+    }
+  }
+}
+
+.cart__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  margin-bottom: $spacing-24;
+
+  .cart__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: $spacing-16;
+    border-bottom: 1px solid $Rose-100;
+
+    &-image {
+      height: 4.8rem;
+      width: 4.8rem;
+      object-fit: cover;
+      border-radius: 0.4rem;
+    }
+
+    &-type {
+      display: inline-block;
+      margin-bottom: 0.8rem;
+      @include Text-Preset-4($font-weight: bold);
+    }
+
+    &-quantity {
+      @include Text-Preset-4(bold, $Red);
+    }
+
+    &-unit-price {
+      margin-left: 0.8rem;
+      @include Text-Preset-4(regular, $Rose-500);
+    }
+
+    &-total-price {
+      margin-left: 0.8rem;
+      @include Text-Preset-4(bold, $Rose-500);
+    }
+
+    &-close {
+      border: 1px solid $Rose-400;
+      padding: 0.4rem;
+      border-radius: 50%;
+    }
+  }
+}
+
+.cart__order-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.4rem;
+
+  &-label {
+    @include Text-Preset-4($font-weight: regular);
+  }
+
+  &-amount {
+    @include Text-Preset-2;
+  }
+}
+
+.cart__carbon-neutral {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1.6rem 2.3rem;
+  background-color: $Rose-50;
+  border-radius: 0.8rem;
+  margin-bottom: 2.4rem;
+
+  &-text {
+    @include Text-Preset-4($font-weight: regular);
+
+    span {
+      font-weight: 600;
+    }
+  }
+}
+
+.cart__confirm-button {
+  width: 100%;
+  padding: 1.6rem 2.4rem;
+  border: 0;
+  background-color: $Red;
+  border-radius: 99px;
+  @include Text-Preset-3($White);
+}
+
+.confirmation-modal {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__container {
+    background-color: $White;
+    width: 100%;
+    border-radius: $spacing-12 $spacing-12 0 0;
+    align-self: flex-end;
+    padding: $spacing-40 $spacing-24 $spacing-24;
+  }
+
+  &__icon {
+    margin-bottom: $spacing-24;
+  }
+
+  &__title {
+    @include Text-Preset-1;
+    margin-bottom: 0.8rem;
+  }
+
+  &__text {
+    @include Text-Preset-3($Rose-500, 400);
+    margin-bottom: 3.2rem;
+  }
+
+  &__card {
+    width: 100%;
+    margin: $spacing-32 0 $spacing-32;
+
+    & .cart__items .cart__list .cart__item {
+      & > div:first-child {
+        display: flex;
+        gap: 1.6rem;
+      }
+    }
+  }
+
+  & .cart__items {
+    background-color: $Rose-50;
+    padding: 2.4rem;
+    border-radius: 0.8rem;
+  }
+}

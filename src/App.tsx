@@ -1,18 +1,63 @@
-import './App.css'
+import { useEffect, useMemo, useState } from 'react'
+
+import './App.scss'
+
+import data from './data/data.json'
+import Dessert from './components/Dessert'
+import Cart from './components/Cart'
+
+export type IDessert = {
+  image: {
+    thumbnail: string
+    mobile: string
+    tablet: string
+    desktop: string
+  }
+  name: string
+  category: string
+  price: number
+}
+
+type IDesserts = IDessert[]
 
 function App() {
+  const [items, setItems] = useState<IDesserts>([])
+
+  useEffect(() => {
+    setItems(data)
+  }, [])
+
+  const renderedItems = useMemo(
+    () => items.map((item, index) => <Dessert key={index} item={item} />),
+    [items]
+  )
+
   return (
     <>
-      Desserts Waffle with Berries Waffle 6.50 Add to Cart Vanilla Bean Crème
-      Brûlée Crème Brûlée 7.00 Add to Cart Macaron Mix of Five Macaron 8.00 Add
-      to Cart Classic Tiramisu Tiramisu 5.50 Add to Cart Pistachio Baklava
-      Baklava 4.00 Add to Cart Lemon Meringue Pie Pie 5.00 Add to Cart Red
-      Velvet Cake Cake 4.50 Add to Cart Salted Caramel Brownie Brownie 4.50 Add
-      to Cart Vanilla Panna Cotta Panna Cotta 6.50 Add to Cart Your Cart{' '}
-      {/* Quantity -->) */}
-      Your added items will appear here Challenge by{' '}
-      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-      Coded by <a href="#">Your Name Here</a>.
+      <div className="page">
+        <main className="main">
+          <h1 className="main__title">Desserts</h1>
+
+          <div className="desserts">{renderedItems}</div>
+        </main>
+
+        <Cart />
+      </div>
+
+      <footer className="footer">
+        Challenge by{' '}
+        <a
+          className="footer__link"
+          href="https://www.frontendmentor.io?ref=challenge"
+        >
+          Frontend Mentor
+        </a>
+        . Coded by{' '}
+        <a className="footer__link" href="#">
+          Rubén
+        </a>
+        .
+      </footer>
     </>
   )
 }
