@@ -32,15 +32,12 @@
   }
 }
 
-.cart__items {
-  margin-bottom: 2.4rem;
-}
-
 .cart__list {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
+  margin-bottom: 2.4rem;
 
   .cart__item {
     display: flex;
@@ -48,6 +45,10 @@
     justify-content: space-between;
     padding-bottom: 1.6rem;
     border-bottom: 1px solid $Rose-100;
+
+    &-image {
+      max-width: 4.8rem;
+    }
 
     &-type {
       display: inline-block;
@@ -118,4 +119,49 @@
   background-color: $Red;
   border-radius: 99px;
   @include Text-Preset-3($White);
+}
+
+.confirmation-modal {
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: $White;
+  z-index: 10;
+  // height: 100%;
+  padding: 4rem 2.4rem 2.4rem;
+
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__title {
+    @include Text-Preset-1;
+    margin-bottom: 0.8rem;
+  }
+
+  &__text {
+    @include Text-Preset-3($Rose-500, 400);
+    margin-bottom: 3.2rem;
+  }
+
+  &__card {
+    width: 100%;
+
+    & .cart__items .cart__list .cart__item {
+      & > div:first-child {
+        display: flex;
+        gap: 1.6rem;
+      }
+    }
+  }
+
+  & .cart__items {
+    background-color: $Rose-50;
+    padding: 2.4rem;
+    border-radius: 0.8rem;
+  }
 }
