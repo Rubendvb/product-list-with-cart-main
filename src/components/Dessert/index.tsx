@@ -2,6 +2,8 @@ import { ButtonAddToCart } from '../ButtonAddToCart'
 
 import { IDessert } from '../../App'
 
+import './Dessert.scss'
+
 interface DessertProps {
   item: IDessert
 }
