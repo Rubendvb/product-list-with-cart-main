@@ -21,7 +21,7 @@ export default function Dessert({ item }: DessertProps) {
         </picture>
 
         <div className="container__button">
-          <ButtonAddToCart />
+          <ButtonAddToCart item={item} />
         </div>
       </div>
 
