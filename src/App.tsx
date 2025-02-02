@@ -32,11 +32,15 @@ function App() {
       items.map((item, index) => (
         <article key={index} className="dessert">
           <div className="dessert__image-container">
-            <img
-              className="dessert__image"
-              src={item.image.mobile}
-              alt={item.name}
-            />
+            <picture>
+              <source media="(min-width: 1024px)" srcSet={item.image.desktop} />
+              <source media="(min-width: 768px)" srcSet={item.image.tablet} />
+              <img
+                className="dessert__image"
+                src={item.image.mobile}
+                alt={item.name}
+              />
+            </picture>
 
             <div className="container__button">
               <ButtonAddToCart />

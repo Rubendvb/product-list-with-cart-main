@@ -4,6 +4,12 @@
 .page {
   padding: $spacing-24;
 
+  @media screen and (min-width: 1024px) {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 3.2rem;
+  }
+
   .main {
     margin-bottom: $spacing-32;
 
@@ -15,6 +21,17 @@
     .desserts {
       display: grid;
       row-gap: $spacing-24;
+
+      @media screen and (min-width: 600px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.6rem;
+      }
+
+      @media screen and (min-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 2.4rem;
+        row-gap: 3.2rem;
+      }
 
       .dessert {
         display: grid;
@@ -64,6 +81,10 @@
     background-color: $White;
     border-radius: $spacing-12;
     padding: $spacing-24;
+
+    @media screen and (min-width: 1024px) {
+      align-self: flex-start;
+    }
 
     &__title {
       @include Text-Preset-2($Red);
