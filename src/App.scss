@@ -2,14 +2,19 @@
 @use './styles/mixins' as *;
 
 .page {
-  max-width: 124rem;
+  max-width: 144rem;
   margin: 0 auto;
   padding: $spacing-24;
+
+  @media screen and (min-width: 768px) {
+    padding: 4rem;
+  }
 
   @media screen and (min-width: 1024px) {
     display: grid;
     grid-template-columns: 3fr 1fr;
     gap: 3.2rem;
+    padding: 8.8rem 11.2rem;
   }
 
   .main {
