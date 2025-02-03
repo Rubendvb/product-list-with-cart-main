@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import { useCart } from '../../context/CartContext/useCart'
 import CardModal from './CardModal'
-
-import './Cart.scss'
 import CardModalConfirm from './CardModalConfirm'
 
+import './Cart.scss'
+
 export default function Cart() {
-  const { cart } = useCart()
+  const { cart, clearCart } = useCart()
 
   const [isConfirmOrderModal, setIsConfirmOrderModal] = useState(false)
 
@@ -16,6 +16,7 @@ export default function Cart() {
 
   function closeModal() {
     setIsConfirmOrderModal(false)
+    clearCart()
   }
 
   return (

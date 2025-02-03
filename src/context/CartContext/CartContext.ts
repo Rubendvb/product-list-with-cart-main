@@ -9,6 +9,7 @@ interface CartContextType {
   removeToCart: (name: string) => void
   quantityDessert: number
   setQuantityDessert: Dispatch<SetStateAction<number>>
+  clearCart: () => void
 }
 
 export const CartContext = createContext<CartContextType | undefined>(undefined)

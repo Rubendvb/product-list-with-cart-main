@@ -47,6 +47,11 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setQuantityDessert(0) // Reseta a quantidade quando o item é removido
   }
 
+  function clearCart() {
+    setCart([])
+    setQuantityDessert(0)
+  }
+
   return (
     <CartContext.Provider
       value={{
@@ -56,6 +61,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
         removeToCart,
         quantityDessert,
         setQuantityDessert,
+        clearCart,
       }}
     >
       {children}
