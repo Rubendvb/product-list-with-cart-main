@@ -1,4 +1,5 @@
 import { useCart } from '../../context/CartContext/useCart'
+import ButtonRemoveItem from '../ButtonRemoveItem'
 
 export default function CardModal() {
   const { cart, removeToCart } = useCart()
@@ -29,10 +30,7 @@ export default function CardModal() {
               className="cart__item-close"
               onClick={() => removeToCart(item.name)}
             >
-              <img
-                src="/assets/images/icon-remove-item.svg"
-                alt="icon remove item"
-              />
+              <ButtonRemoveItem />
             </button>
           </li>
         ))}
