@@ -2,6 +2,8 @@ import { ButtonAddToCart } from '../ButtonAddToCart'
 
 import { IDessert } from '../../App'
 
+import { useCart } from '../../context/CartContext/useCart'
+
 import './Dessert.scss'
 
 interface DessertProps {
@@ -9,9 +11,17 @@ interface DessertProps {
 }
 
 export default function Dessert({ item }: DessertProps) {
+  const { cart } = useCart()
+
+  const itemEqual = cart.find((itemCart) => itemCart.name === item.name)
+
   return (
     <article className="dessert">
-      <div className="dessert__image-container">
+      <div
+        className={`dessert__image-container ${
+          itemEqual?.name === item.name ? 'selected' : ''
+        }`}
+      >
         <picture>
           <source media="(min-width: 1024px)" srcSet={item.image.desktop} />
           <source media="(min-width: 768px)" srcSet={item.image.tablet} />

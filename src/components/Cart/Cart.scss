@@ -1,6 +1,10 @@
 @use '../../styles/variables' as *;
 @use '../../styles/mixins' as *;
 
+body.no-scroll {
+  overflow: hidden;
+}
+
 .cart {
   background-color: $White;
   border-radius: $spacing-12;
@@ -79,6 +83,18 @@
       border: 1px solid $Rose-400;
       padding: 0.4rem;
       border-radius: 50%;
+
+      svg {
+        color: $Rose-400;
+      }
+
+      &:hover {
+        border-color: $Rose-900;
+
+        svg {
+          color: $Rose-900;
+        }
+      }
     }
   }
 }
@@ -88,6 +104,10 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 2.4rem;
+
+  .confirmation-modal__card .cart__items & {
+    margin-bottom: 0;
+  }
 
   &-label {
     @include Text-Preset-4($font-weight: regular);
@@ -125,6 +145,10 @@
   border-radius: 99px;
   cursor: pointer;
   @include Text-Preset-3($White);
+
+  &:hover {
+    background-color: color.adjust($Red, $lightness: -25%);
+  }
 }
 
 .confirmation-modal {

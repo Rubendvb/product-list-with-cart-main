@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useCart } from '../../context/CartContext/useCart'
 import CardModal from './CardModal'
 import CardModalConfirm from './CardModalConfirm'
@@ -18,6 +18,14 @@ export default function Cart() {
     setIsConfirmOrderModal(false)
     clearCart()
   }
+
+  useEffect(() => {
+    if (isConfirmOrderModal) {
+      document.body.classList.add('no-scroll')
+    } else {
+      document.body.classList.remove('no-scroll')
+    }
+  }, [isConfirmOrderModal])
 
   return (
     <>
