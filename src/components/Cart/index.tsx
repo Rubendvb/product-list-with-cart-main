@@ -64,8 +64,8 @@ export default function Cart() {
           <div className="confirmation-modal__container">
             <img
               className="confirmation-modal__icon"
-              src="/public/assets/images/icon-order-confirmed.svg"
-              alt=""
+              src="/assets/images/icon-order-confirmed.svg"
+              alt="icon confirmation"
             />
             <h3 className="confirmation-modal__title">Order Confirmed</h3>
             <span className="confirmation-modal__text">

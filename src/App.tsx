@@ -53,7 +53,11 @@ function App() {
           Frontend Mentor
         </a>
         . Coded by{' '}
-        <a className="footer__link" href="#">
+        <a
+          className="footer__link"
+          href="https://github.com/Rubendvb"
+          target="_blank"
+        >
           Rubén
         </a>
         .

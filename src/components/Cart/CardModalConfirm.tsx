@@ -6,6 +6,7 @@ export default function CardModalConfirm() {
   const totalAmount = cart
     .reduce((total, item) => total + item.price * item.quantity, 0)
     .toFixed(2)
+
   return (
     <div className="cart__items">
       <ul className="cart__list">
