@@ -74,6 +74,8 @@
     }
 
     &-close {
+      all: unset;
+      cursor: pointer;
       border: 1px solid $Rose-400;
       padding: 0.4rem;
       border-radius: 50%;
@@ -121,6 +123,7 @@
   border: 0;
   background-color: $Red;
   border-radius: 99px;
+  cursor: pointer;
   @include Text-Preset-3($White);
 }
 
@@ -130,9 +133,8 @@
   height: 100vh;
   left: 0;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
-  align-items: center;
   justify-content: center;
 
   &__container {
@@ -141,6 +143,18 @@
     border-radius: $spacing-12 $spacing-12 0 0;
     align-self: flex-end;
     padding: $spacing-40 $spacing-24 $spacing-24;
+
+    @media screen and (min-width: 768px) {
+      align-self: center;
+      max-width: 68.8rem;
+      border-radius: $spacing-12;
+    }
+
+    @media screen and (min-width: 1440px) {
+      align-self: center;
+      max-width: 59.2rem;
+      border-radius: $spacing-12;
+    }
   }
 
   &__icon {

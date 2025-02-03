@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 import { ButtonIncrementDecrement } from '../ButtonIncrementDecrement'
 
 import { useCart } from '../../context/CartContext/useCart'
@@ -13,34 +11,31 @@ interface ButtonAddToCartProps {
 }
 
 export function ButtonAddToCart({ item }: ButtonAddToCartProps) {
-  const { addToCart, updateQuantity } = useCart()
-  const [quantityDessert, setQuantityDessert] = useState(0)
+  const { cart, addToCart, updateQuantity } = useCart()
+
+  const cartItem = cart.find((cartItem) => cartItem.name === item.name)
+  const quantity = cartItem ? cartItem.quantity : 0
 
   function handleAddCart() {
-    setQuantityDessert((prev) => prev + 1)
     addToCart(item)
   }
 
   return (
     <>
-      {quantityDessert > 0 ? (
-        <button
-          className={`button-cart ${quantityDessert > 0 ? 'bg-red' : ''}`}
-        >
+      {quantity > 0 ? (
+        <button className={`button-cart ${quantity > 0 ? 'bg-red' : ''}`}>
           <ButtonIncrementDecrement
             variant="decrement"
             onClick={() => {
-              setQuantityDessert((prev) => Math.max(prev - 1, 0))
               updateQuantity(item.name, -1)
             }}
           />
 
-          <span>{quantityDessert}</span>
+          <span>{quantity}</span>
 
           <ButtonIncrementDecrement
             variant="increment"
             onClick={() => {
-              setQuantityDessert(quantityDessert + 1)
               updateQuantity(item.name, 1)
             }}
           />

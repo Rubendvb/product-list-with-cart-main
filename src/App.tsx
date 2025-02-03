@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useState } from 'react'
+import Dessert from './components/Dessert'
+import Cart from './components/Cart'
 
 import './App.scss'
 
 import data from './data/data.json'
-import Dessert from './components/Dessert'
-import Cart from './components/Cart'
 
 export type IDessert = {
   image: {

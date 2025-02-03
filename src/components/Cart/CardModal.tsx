@@ -1,9 +1,7 @@
 import { useCart } from '../../context/CartContext/useCart'
 
-import './Cart.scss'
-
 export default function CardModal() {
-  const { cart } = useCart()
+  const { cart, removeToCart } = useCart()
 
   const totalAmount = cart
     .reduce((total, item) => total + item.price * item.quantity, 0)
@@ -26,11 +24,16 @@ export default function CardModal() {
                 </span>
               </div>
             </div>
-            <img
+
+            <button
               className="cart__item-close"
-              src="/assets/images/icon-remove-item.svg"
-              alt="icon remove item"
-            />
+              onClick={() => removeToCart(item.name)}
+            >
+              <img
+                src="/assets/images/icon-remove-item.svg"
+                alt="icon remove item"
+              />
+            </button>
           </li>
         ))}
       </ul>
