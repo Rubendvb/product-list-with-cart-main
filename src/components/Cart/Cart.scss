@@ -147,7 +147,7 @@ body.no-scroll {
   @include Text-Preset-3($White);
 
   &:hover {
-    background-color: darken($Red, 25%);
+    background-color: color.adjust($Red, $lightness: -25%);
   }
 }
 
