@@ -19,6 +19,7 @@
   .dessert {
     display: grid;
     row-gap: $spacing-32 + 0.6rem;
+    align-items: start;
 
     &__image-container {
       position: relative;
