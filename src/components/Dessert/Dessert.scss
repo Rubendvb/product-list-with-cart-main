@@ -61,4 +61,10 @@
 .selected {
   outline: 2px solid $Red;
   border-radius: $spacing-8;
+  transition: outline 0.3s ease-in-out, border-radius 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 0 8px rgba($Red, 0.6);
+  }
 }
